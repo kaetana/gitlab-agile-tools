@@ -5,4 +5,16 @@ sudo: false
 jdk:
   - oraclejdk8
 
-script: ./mvnw clean test -B
+script:
+  - ./mvnw clean test -B
+
+before_deploy:
+  - ./mvnw clean package
+
+deploy:
+  provider: releases
+  api_key: $GITHUB_TOKEN
+  file: ./target/gitlab-agile-tools.jar
+  skip_cleanup: true
+  on:
+    tags: true
