@@ -11,7 +11,7 @@ script:
   - ./mvnw clean test -B
 
 before_deploy:
-  - docker login -u $DOCKER_USERNAME -p $DOCKER_USERNAME
+  - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
   - ./mvnw clean package docker:build -DpushImage -Dproject.version=$TRAVIS_TAG
 
 deploy:
