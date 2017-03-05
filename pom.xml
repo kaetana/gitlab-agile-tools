@@ -109,7 +109,7 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>0.4.13</version>
                 <configuration>
-                    <imageName>registry.jborned.com/jborn/${project.artifactId}</imageName>
+                    <imageName>jborn/gitlab-agile-tools</imageName>
                     <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
                     <imageTags>
                         <imageTag>${project.version}</imageTag>
@@ -122,8 +122,9 @@
                             <include>${project.build.finalName}.jar</include>
                         </resource>
                     </resources>
-                    <serverId>docker-registry</serverId>
-                    <registryUrl>https://registry.jborned.com/v1/</registryUrl>
+                    <serverId>docker-hub</serverId>
+                    <registryUrl>https://index.docker.io/v1/</registryUrl>
+                    <useConfigFile>true</useConfigFile>
                 </configuration>
             </plugin>
             <plugin>
@@ -165,6 +166,5 @@
             </plugin>
         </plugins>
     </build>
-
 
 </project>

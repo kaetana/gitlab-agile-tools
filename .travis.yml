@@ -1,6 +1,8 @@
 language: java
+sudo: required
 
-sudo: false
+services:
+  - docker
 
 jdk:
   - oraclejdk8
@@ -9,7 +11,8 @@ script:
   - ./mvnw clean test -B
 
 before_deploy:
-  - ./mvnw clean package
+  - docker login -u $DOCKER_USERNAME -p $DOCKER_USERNAME
+  - ./mvnw clean package docker:build -DpushImage -Dproject.version=$TRAVIS_TAG
 
 deploy:
   provider: releases
