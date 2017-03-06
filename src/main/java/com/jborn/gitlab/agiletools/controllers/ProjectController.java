@@ -29,4 +29,5 @@ public class ProjectController {
                 .setHasSpentTime(eventService.projectHasEvent(gitlabProject.getId()))
         ).collect(toList());
     }
+
 }
