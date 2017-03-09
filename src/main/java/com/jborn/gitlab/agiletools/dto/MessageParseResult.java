@@ -17,4 +17,12 @@ public class MessageParseResult {
     public boolean isError() {
         return ERROR.equals(result);
     }
+
+    public Integer getSpentTime() {
+        return spentTime;
+    }
+
+    public Integer getIssueId() {
+        return issueId;
+    }
 }

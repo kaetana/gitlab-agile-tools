@@ -13,6 +13,8 @@ public interface Constants {
         String PROJECTS_API_PREFIX = GLOBAL_PREFIX + "projects/";
 
         String PROJECTS_LIST = PROJECTS_API_PREFIX + "list";
+
+        String PROJECT = GLOBAL_PREFIX + "project";
     }
 
     interface WebHooksApi {
@@ -20,4 +22,6 @@ public interface Constants {
 
         String WEB_HOOK = WH_PREFIX;
     }
+
+    String NOT_AVAILABLE = "n/a";
 }

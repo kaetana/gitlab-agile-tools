@@ -12,4 +12,6 @@ public class GitLabUserEventResult {
     private EventType eventType;
     private MessageParseResult logWork;
     private String raw;
+    // what is better - Date or String? Date - is possible?
+    private String dateOfSpentTime;
 }

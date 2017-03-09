@@ -26,6 +26,7 @@ public class GitLabUserEvent {
     private EventType eventType;
     private MessageParseResult logWork;
     private String raw;
+    private String dateOfSpentTime;
 
     public ObjectNode convertRaw() {
         ObjectMapper mapper = new ObjectMapper();
@@ -35,5 +36,21 @@ public class GitLabUserEvent {
             log.error("Malformed json content: Can't parse '{}'", raw);
             return null;
         }
+    }
+
+    public Integer getSpentTime() {
+        return logWork.getSpentTime();
+    }
+
+    public Integer getIssueId() {
+        return logWork.getIssueId();
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public String getDateOfSpentTime() {
+        return dateOfSpentTime;
     }
 }
