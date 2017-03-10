@@ -13,4 +13,8 @@ public class User {
     private String id;
     private String name;
     private String username;
+
+    public String getName() {
+        return name;
+    }
 }
